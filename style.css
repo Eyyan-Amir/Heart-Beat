@@ -1,0 +1,54 @@
+*{margin: 0%;padding: 0%;box-sizing: border-box; font-family: "josefin",cursive;}
+html{
+    font-size: 62.5%;
+    /* 1rem =100px */
+}
+.mainDiv{
+    position: relative;
+height: 100vh;
+width: 100vw;
+background-color : lightgray;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.childDiv{
+    height: 15rem;
+    width: 15rem;
+    background-color: darkred;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: 0rem .1rem .7rem rgba(0, 0, 0, 0.9);
+    animation: heart 1s linear 0s infinite ;
+}
+@keyframes heart{
+    0% {transform: rotate(45deg) scale(1);}
+    20% {transform: rotate(45deg) scale(1.2);}
+    40% {transform: rotate(45deg) scale(1.4);}
+    60% {transform: rotate(45deg) scale(1.2);}
+    80% {transform: rotate(45deg) scale(1.4);}
+    100% {transform: rotate(45deg) scale(1);}
+}
+.childDiv::after{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background-color: darkred;
+    position: absolute;
+    transform: translateY(-50%);    
+    border-radius: 50%;
+}
+.childDiv::before{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background-color: darkred;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+.text{
+    position: absolute;
+    font-size: 5rem;
+    transform: translate(0rem,20rem);
+}
